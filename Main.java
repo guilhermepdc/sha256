@@ -59,36 +59,42 @@ public class Main {
         String numHex = "";
         String num = "";
         String str = "";
+        String binary = "";
 
-        int count = 102240906;
+        int count = 0;
 
         // compara o o valor hexadecimal
+        // compara binário
+        for(int i = 0;;) {
+            gui = guilherme + String.valueOf(count);
+            numHex = sha256(gui).substring(0, 7).toString();;
+            if(numHex.equals(strHex)) {
+                str = sha256(gui);
+                System.out.println("sha256 hex: " + str);
+                num = hexToBin(str).substring(0, 30).toString();
+                System.out.println("num: " + num);
+                binary = hexToBin(str);
+                System.out.println("bin: " + binary);
+                if(num.equals(bin)) {
+                    break;
+                }
+            }
+            count++;
+        }
+
+        // compara o valor binário
         // for(int i = 0;;) {
         //     gui = guilherme + String.valueOf(count);
-        //     numHex = sha256(gui).substring(0, 7).toString();;
-        //     if(numHex.equals(strHex)) {
-        //         break;
-        //     }
+        //     str = sha256(gui);
+        //     num = hexToBin(str).substring(0, 30).toString();
+        //     if(num.equals(bin)) { break; }
+        //     if(count == 200000000) { break; }
         //     // System.out.println("str: " + str);
         //     // System.out.println("bin: " + bin);
-        //     System.out.println("numHex: " + numHex);
+        //     System.out.println("num: " + num);
         //     System.out.println("gui: " + gui);
         //     count++;
         // }
-
-        // compara o valor binário
-        for(int i = 0;;) {
-            gui = guilherme + String.valueOf(count);
-            str = sha256(gui);
-            num = hexToBin(str).substring(0, 30).toString();
-            if(num.equals(bin)) { break; }
-            if(count == 200000000) { break; }
-            // System.out.println("str: " + str);
-            // System.out.println("bin: " + bin);
-            System.out.println("num: " + num);
-            System.out.println("gui: " + gui);
-            count++;
-        }
 
         System.out.println(gui);
     }
