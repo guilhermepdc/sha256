@@ -1,6 +1,6 @@
 public class Run implements Runnable{
 
-    private final int count;
+    private final int count = 0;
     String avelino = "Avelino194217463";
     String hex = "000000030BC26B9F5732EEFA3D2A6136D30C6C0332E15E6580B82AC0A70781B6";
     // String strHex = hex.substring(0, 7).toString();
@@ -16,9 +16,9 @@ public class Run implements Runnable{
         String str = "";
         String binary = "";
 
-        int count = 0;
+        // int count = 0;
 
-    public CalculaPrimos2(int count) {
+    public Run(int count) {
         this.count = count;
     }
 
@@ -45,6 +45,6 @@ public class Run implements Runnable{
             count++;
         }
 
-        System.out.println(Thread.currentThread().getName() + ": " + gui " terminou!");
+        System.out.println(Thread.currentThread().getName() + ": " + gui + " terminou!");
   }
 }
