@@ -7,6 +7,7 @@ import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.lang.*;
+import java.math.BigInteger;
 
 public class App {
 
@@ -62,7 +63,7 @@ public class App {
         String str = "";
         String binary = "";
 
-        int count = 0;
+        long count = 0L;
         
         for(int i = 0;;) {
             gui = guilherme + String.valueOf(count);
@@ -80,7 +81,7 @@ public class App {
                     break;
                 }
             }
-            // System.out.println(count);
+            //System.out.println(count);
             count++;
         }
 
