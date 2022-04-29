@@ -50,8 +50,10 @@ public class Main {
         // Referencia
         String avelino = "Avelino194217463";
         String hex = "000000030BC26B9F5732EEFA3D2A6136D30C6C0332E15E6580B82AC0A70781B6";
-        String strHex = hex.substring(0, 7).toString();
-        String bin = hexToBin(hex).substring(0, 30).toString();
+        // String strHex = hex.substring(0, 7).toString();
+        String strHex = "0000000";
+        // String bin = hexToBin(hex).substring(0, 30).toString();
+        String bin = "000000000000000000000000000000";
 
 
         String guilherme = "Guilherme";
@@ -60,6 +62,8 @@ public class Main {
         String num = "";
         String str = "";
         String binary = "";
+
+        boolean value = false;
 
         int count = 0;
 
@@ -75,10 +79,14 @@ public class Main {
                 System.out.println("num: " + num);
                 binary = hexToBin(str);
                 System.out.println("bin: " + binary);
+                System.out.println("name: " + gui);
+                System.out.println("count: " + count);
+                value = true;
                 if(num.equals(bin)) {
                     break;
                 }
             }
+            // System.out.println(count);
             count++;
         }
 
@@ -96,6 +104,6 @@ public class Main {
         //     count++;
         // }
 
-        System.out.println(gui);
+        System.out.println("RESULT: " + gui);
     }
 }
