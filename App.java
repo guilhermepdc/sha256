@@ -1,23 +1,14 @@
-public class Run implements Runnable{
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.security.DigestInputStream;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.lang.*;
 
-    String avelino = "Avelino194217463";
-    String hex = "000000030BC26B9F5732EEFA3D2A6136D30C6C0332E15E6580B82AC0A70781B6";
-    // String strHex = hex.substring(0, 7).toString();
-    String strHex = "0000000";
-    // String bin = hexToBin(hex).substring(0, 30).toString();
-    String bin = "000000000000000000000000000000";
-
-
-    String guilherme = "Guilherme";
-    String gui = "";
-    String numHex = "";
-    String num = "";
-    String str = "";
-    String binary = "";
-
-    int count = 0;
-
-    public Run() { }
+public class App {
 
     public static String sha256(final String base) {
         try{
@@ -55,9 +46,24 @@ public class Run implements Runnable{
         return bin;
     }
 
-  //tarefa a realizar: procurar numeros primos no intervalo recebido
-    @Override
-    public void run() {
+    public static void main(String[] args) {
+
+        String avelino = "Avelino194217463";
+        String hex = "000000030BC26B9F5732EEFA3D2A6136D30C6C0332E15E6580B82AC0A70781B6";
+        // String strHex = hex.substring(0, 7).toString();
+        String strHex = "0000000";
+        // String bin = hexToBin(hex).substring(0, 30).toString();
+        String bin = "000000000000000000000000000000";
+
+        String guilherme = "Guilherme";
+        String gui = "";
+        String numHex = "";
+        String num = "";
+        String str = "";
+        String binary = "";
+
+        int count = 0;
+        
         for(int i = 0;;) {
             gui = guilherme + String.valueOf(count);
             numHex = sha256(gui).substring(0, 7).toString();;
@@ -78,9 +84,6 @@ public class Run implements Runnable{
             count++;
         }
 
-        System.out.println(Thread.currentThread().getName() + ": " + gui + " terminou!");
+        System.out.println("RESULT: " + gui);
     }
-
-
-
 }
